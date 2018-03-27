@@ -13,7 +13,6 @@ namespace Donwload6MinEnglish {
             Console.ReadKey(true);
         }
         
-
         #region ParseAndDownload
         static private void DownloadAll() {
             List<string> urlList = GetAllEpisodes();
@@ -45,7 +44,7 @@ namespace Donwload6MinEnglish {
             string strMainPage = GetHtmlByURL(targetUAL);
             const string searchTarget = "/learningenglish/english/features/6-minute-english/ep-";
             int cur = strMainPage.IndexOf(searchTarget, 0);
-            List<string> urlList = new List<string>();
+            List<string> urlList = new List<string>();          
             while (-1 != cur) {
                 int end = strMainPage.IndexOf("\"", cur);
                 string url = preURL + strMainPage.Substring(cur, end - cur);
@@ -67,7 +66,8 @@ namespace Donwload6MinEnglish {
         #endregion
 
     }
-
+    
+    //modify .mp3 files' title
     class MediaTags {
         public string Title { get; set; }
         private void Init(string path) {
