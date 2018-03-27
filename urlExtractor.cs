@@ -20,7 +20,7 @@ namespace Donwload6MinEnglish {
                 string download = GetDownloadURL(url);
                 if (!download.StartsWith("http")) Console.WriteLine(download);
             }
-            Console.WriteLine("Downloading completed!");
+            Console.WriteLine("Download completed!");
         }
         /// <summary>
         /// get the webpage's html doc through its URL
@@ -55,6 +55,7 @@ namespace Donwload6MinEnglish {
             }
             return urlList;
         }
+        // get the download url from download page url
         static private string GetDownloadURL(string url) {
             string childPage = GetHtmlByURL(url);
             int cur = childPage.IndexOf(".mp3");
@@ -67,7 +68,7 @@ namespace Donwload6MinEnglish {
 
     }
     
-    //modify .mp3 files' title
+    // modify .mp3 files' title
     class MediaTags {
         public string Title { get; set; }
         private void Init(string path) {
